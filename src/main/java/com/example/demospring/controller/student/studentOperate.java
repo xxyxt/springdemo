@@ -19,7 +19,7 @@ public class studentOperate {
     }
     @RequestMapping("/insert")
     public void insert(student stu){
-        stu.setId(10);
+        stu.setId(12);
         stu.setName("xxy");
         servicestudent.insert(stu);
     }
