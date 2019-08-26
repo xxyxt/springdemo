@@ -6,14 +6,19 @@ import com.example.demospring.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
-
 import javax.servlet.http.HttpSession;
+
 @RestController
 public class loginController {
 
     @Autowired
-    UserService userService;
-    HttpSession session;
+    private UserService userService;
+    private HttpSession session;
+
+    public loginController(HttpSession session) {
+        this.session = session;
+    }
+
     @CrossOrigin
     @PostMapping(value = "/api/login")
     @ResponseBody
